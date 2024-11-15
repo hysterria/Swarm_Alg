@@ -24,7 +24,7 @@ class Particle:
         social_component = social * r2 * (global_best - self.position)
 
         # Учитываем инерцию веса, если включен соответствующий режим
-        if use_inertia:
+        if not use_inertia:
             self.velocity = inertia * self.velocity + cognitive_component + social_component
         else:
             self.velocity = cognitive_component + social_component
